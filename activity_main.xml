@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8E2E2"
+    android:orientation="vertical"
+    android:visibility="visible">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#B99BE4"
+        android:gravity="center"
+        android:text="CALENDAR"
+        android:textColor="@color/white"
+        android:textSize="35dp" />
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:background="#90FBEFBB"></CalendarView>
+
+    <TextView
+        android:id="@+id/selectedDay"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#B3EDFF"
+        android:gravity="center"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/saveTextButton"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#FAB2CA"
+        android:text="SAVE"
+        android:textColor="@color/white"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/textInput"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:hint="Write Something"
+        android:textColor="@color/black" />
+
+</LinearLayout>
