@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Calendar_app</string>
+    <string name="CALENDAR">calendar</string>
+    <string name="SAVE">save</string>
+    <string name="write_something">write_something</string>
+</resources>
