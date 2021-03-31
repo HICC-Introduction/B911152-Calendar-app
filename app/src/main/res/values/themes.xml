@@ -6,5 +6,9 @@
         <item name="colorPrimaryDark">@color/purple_700</item>
         <item name="colorAccent">@color/teal_200</item>
         <!-- Customize your theme here. -->
+
+    </style>
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@layout/activity_splash</item>
     </style>
 </resources>
