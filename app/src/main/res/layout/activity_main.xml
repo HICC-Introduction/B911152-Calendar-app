@@ -6,45 +6,48 @@
     android:orientation="vertical"
     android:visibility="visible">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#B99BE4"
-        android:gravity="center"
-        android:text="@string/CALENDAR"
-        android:textColor="@color/white"
-        android:textSize="35sp" />
+
 
     <CalendarView
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="351dp"
-        android:background="#90FBEFBB"></CalendarView>
+        android:background="#B99BE4"></CalendarView>
 
     <TextView
         android:id="@+id/selectedDay"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:background="#B3EDFF"
+        android:background="#FAB2CA"
         android:gravity="center"
         android:textColor="@color/black" />
-
-    <Button
-        android:id="@+id/saveTextButton"
+    <LinearLayout
+        android:id="@+id/dayContent"
+        android:visibility="gone"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="#FAB2CA"
-        android:text="@string/SAVE"
-        android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/textInput"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:hint="@string/write_something"
-        android:inputType="textShortMessage|none"
-        android:textColor="@color/black"
-        android:autofillHints="" />
+        <Button
+            android:id="@+id/saveTextButton"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#B99BE4"
+            android:text="@string/SAVE"
+            android:textColor="#272727"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/textInput"
+            android:background="#F8E2E2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:autofillHints=""
+            android:textSize="20dp"
+            android:hint="@string/write_something"
+            android:inputType="textShortMessage|none"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
 
 </LinearLayout>
