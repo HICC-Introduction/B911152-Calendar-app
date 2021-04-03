@@ -9,9 +9,13 @@ import android.widget.CalendarView;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
         days = new int[numberOfDays];
         months = new int[numberOfDays];
         years = new int[numberOfDays];
+
+        readInfo();
 
         final EditText textInput = findViewById(R.id.textInput);
 
@@ -98,18 +104,37 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPause(){
             super.onPause();
-            saveInfo();
-        }
-        private void saveInfo() {
-            File file = new File(this.getFilesDir(), "calendarStrings");
-            FileWriter fileWriter = new FileWriter("calendarStrings");
-
-            FileOutputStream out;
-            try{
-                out = openFileOutput("calendarStrings", Context.MODE_PRIVATE);
-                out.write(calendarStrings);
-            }catch(Exception e){
+            try {
+                saveInfo();
+            } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+        private void saveInfo() throws IOException {
+            File file = new File(this.getFilesDir(), "calendarStrings");
+            try{
+                FileWriter fileWriter = new FileWriter("calendarStrings");
+                final int calendarStringsCount = calendarStrings.size();
+                for (int i =0; i<calendarStringsCount; i++){
+                    fileWriter.write(calendarStrings.get(i));
+                }
+                fileWriter.close();
+            }catch(IOException e){
+                e.printStackTrace();
+            }
+    }
+    private void readInfo(){
+        try{
+            BufferedReader reader = new BufferedReader(new FileReader("calendarStrings"));
+            String line = null;
+            while ((line = reader.readLine()) != null){
+                calendarStrings.add(line);
+            }
+            reader.close();
+        }catch(FileNotFoundException e){
+            e.printStackTrace();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }
